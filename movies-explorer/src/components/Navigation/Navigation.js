@@ -3,8 +3,10 @@ import "./Navigation.css";
 import "./_hidden/navigation_hidden.css";
 import "./_opened/navigation_opened.css";
 import "./_width/navigation_width.css"
+import "./_fixed/navigation_fixed.css"
 import accauntLogo from "../../images/icon-accaunt.svg";
 import { useState } from "react";
+
 
 const Navigation = () => {
 
@@ -21,7 +23,7 @@ const Navigation = () => {
   const authLinksHidden = `${pathname === "/movies" ||
     pathname === "/saved-movies" ||
     pathname === "/profile"
-    ? "navigation_hidden"
+    ? "navigation_hidden " 
     : ""
     }`;
 
@@ -44,7 +46,7 @@ const Navigation = () => {
   return (
     <nav className={`navigation ${navLinksHidden} ${headerNavigateWidth}`}>
 
-      <div className={`navigation__burger-button ${accauntLinksHidden}`}>
+      <div className={`navigation__burger-button ${accauntLinksHidden} ${clickMenuBurger ? "navigation_fixed" : ""}`}>
         <input id="navigation__menu-toggle" type="checkbox" />
         <label
           onClick={handleClickMenuBurger}
@@ -66,7 +68,7 @@ const Navigation = () => {
           </Link>
         </li>
       </ul>
-      <div className={`navigation__sublayer ${!clickMenuBurger ? "navigation_hidden" : ""}`}></div>
+      <div className={`navigation__sublayer ${!clickMenuBurger ? "navigation_hidden" : " "}`}></div>
       <ul className={`navigation__links navigation__links_column navigation__links_visibility_off ${accauntLinksHidden} ${clickMenuBurger ? "navigation_opened" : ""}`}>
         <li className="navigation__links-item navigation_hidden-link navigation__links-item_margin_null">
           <Link className="navigation__main-link" to="/">

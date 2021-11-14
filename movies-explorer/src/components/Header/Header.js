@@ -3,7 +3,7 @@ import './_active/header_active.css'
 import './_background_active/header_background_active.css';
 import './_width_small/header_width_small.css';
 import './_white/header_white.css'
-import logo from '../../images/logo.png'
+import logo from '../../images/logo-heder.svg'
 import Navigation from '../Navigation/Navigation';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';

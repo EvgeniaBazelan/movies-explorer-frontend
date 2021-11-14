@@ -139,6 +139,7 @@
 
 #navigation__menu-toggle:checked ~ .navigation__menu-btn > span {
   transform: rotate(45deg);
+
 }
 #navigation__menu-toggle:checked ~ .navigation__menu-btn > span::before {
   top: 0;
@@ -190,6 +191,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   .navigation__movies-link,
@@ -223,10 +225,12 @@
 
   .navigation__links-item_direction_column {
     flex-direction: column;
+
   }
 
   .navigation__profile-link {
-    padding-top: 500px;
+    position: absolute;
+    bottom: 5%;
   }
 
   .navigation_hidden-link {

@@ -20,11 +20,10 @@
   width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
-  background: url(../../../images/icon-find.svg) no-repeat right 5px top 5px;
-  background-size: 59px 34px;
+
 
   outline: none;
-  grid-area: input;
+  /*grid-area: input;*/
   border: 1.5px solid #e8e8e8;
   box-sizing: border-box;
   border-radius: 50px;
@@ -75,6 +74,23 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 18px;
+}
+.search-form__button{
+  width: 59px;
+  height: 34px;
+  background-size: cover;
+  border: none;
+  background: url(../../../images/icon-find.svg) no-repeat right 1px;
+  cursor:pointer;
+  padding: 0 0;
+  position: absolute;
+  top: 6px;
+  right: 3px;
+}
+.search-form__form-input{
+  grid-area: input;
+  position: relative;
+  width: 100%;
 }
 
 @media all and (max-width: 1200px) {

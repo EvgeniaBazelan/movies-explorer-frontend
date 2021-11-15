@@ -10,7 +10,7 @@ const SearchForm = () => {
           <button
               className="search-form__button"
               type="submit"
-          ></button>
+          >Найти</button>
       </form>
           <div className="search-form__checkbox-wrap">
             <p className="search-form__name-checkbox">Короткометражки</p>

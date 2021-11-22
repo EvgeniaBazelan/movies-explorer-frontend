@@ -1,14 +1,15 @@
 import './Header.css';
 import './_active/header_active.css'
 import './_background_active/header_background_active.css';
+import './_background_active/header_background_active.css';
 import './_width_small/header_width_small.css';
-import './_white/header_white.css'
-import logo from '../../images/logo-heder.svg'
+import './_white/header_white.css';
+import logo from '../../images/logo-heder.svg';
 import Navigation from '../Navigation/Navigation';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ isLogin }) => {
 
   const { pathname } = useLocation();
 
@@ -22,10 +23,10 @@ const Header = () => {
     : ""}`
 
   const headerBackgroundWhite = `${pathname === "/sign-in"
-    || pathname === "/sign-up" || pathname === "/movies" || pathname === "/saved-movies" 
+  || pathname === "/sign-up" || pathname === "/movies" || pathname === "/saved-movies"
   || pathname === "/profile"
-    ? "header_white"
-    : ""}`
+      ? "header_white"
+      : ""}`
 
   const backgroundActive = `${pathname === "/"
     ? "header_background_active"
@@ -41,13 +42,13 @@ const Header = () => {
     : ""}`
 
   return (
-    <header className={`header ${headerActive} ${backgroundActive} ${widthSmall}  ${headerBackgroundWhite} `}>
-      <div className={`header__container ${headerDeactivePadding} `}>
+      <header className={`header ${headerActive} ${backgroundActive} ${widthSmall}  ${headerBackgroundWhite} `}>
+      <div className={`header__container ${headerDeactivePadding}`}>
         <Link className="header__link-logo" to="/">
           <img className="header__logo" src={logo} alt="Логотип" />
         </Link>
 
-        <Navigation />
+        <Navigation isLogin={isLogin} />
       </div>
     </header>
   )

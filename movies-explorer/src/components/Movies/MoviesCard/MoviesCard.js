@@ -1,51 +1,79 @@
 import "./MoviesCard.css";
-import moviesPic from "../../../images/card-pic.png"
-import { useEffect, useState } from "react";
-import iconDeleteCard from "../../../images/icon-delete.svg";
-import { useLocation } from "react-router";
-import iconUnsave from "../../../images/unsave-like.svg";
+import "./_active/movies-card_active.css"
 import iconSave from "../../../images/save-like.svg";
-const MoviesCard = () => {
+import iconDeleteCard from "../../../images/icon-delete.svg";
+import iconUnsave from "../../../images/unsave-like.svg";
+import { useLocation } from "react-router";
+import declinationTime from "../../../utils/declinationTime";
+
+const MoviesCard = ({ movie,
+  handleSaveMovie,
+  handleDeleteMovie }) => {
+  const
+    {
+      nameRU,
+      duration,
+      image,
+      trailerLink,
+      isSaved
+    } = movie;
 
   const { pathname } = useLocation();
 
-  const [clickSaveButton, setClickSaveButton] = useState('');
-  const [saveButtonColor, setSaveButtonColor] = useState(false);
+  const declinationMinute = declinationTime(duration, ['минута', 'минуты', 'минут']);
 
-  useEffect(() => {
-    if (pathname === "/saved-movies") {
-      setClickSaveButton((<img className="movies-card__button-icon" src={iconDeleteCard} alt="Кнопка сохранения карточки"></img>));
+  const handleClickSaveButton = () => {
+
+    if (pathname === "/movies" && isSaved === true) {
+      handleDeleteMovie({ nameRU })
+    } else if (pathname === "/movies" && isSaved === false) {
+      handleSaveMovie({ movie })
     } else {
-      setClickSaveButton((<img className="movies-card__button-icon" src={iconUnsave} alt="Кнопка сохранения карточки"></img>))
+      handleDeleteMovie({ nameRU })
     }
-  }, [pathname]);
-
-  const handlerClickSaveButton = () => {
-    if (pathname === "/saved-movies") {
-      setClickSaveButton((<img className="movies-card__button-icon" src={iconDeleteCard} alt="Кнопка сохранения карточки"></img>));
-    } else {
-        saveButtonColor
-            ? setSaveButtonColor(false)
-            : setSaveButtonColor(true)
-
-        saveButtonColor === false
-        ? setClickSaveButton((<img className="movies-card__button-icon" src={iconSave} alt="Кнопка сохранения карточки"></img>))
-        : setClickSaveButton((<img className="movies-card__button-icon" src={iconUnsave} alt="Кнопка сохранения карточки"></img>));
-    }
-
   }
 
   return (
-    <section className="movies-card">
-      <img className="movies-card__image" src={moviesPic} alt="Картика карточки"></img>
-        <div className="movies-card__title-wrap">
-        <h2 className="movies-card__title">33 слова о дизайне</h2>
-        <p className="movies-card__duration">1ч 47 минут</p>
-            <button className="movies-card__button" onClick={handlerClickSaveButton}>
-        {clickSaveButton}
+
+    <li className="movies-card">
+      <div className="movies-card__title-wrap">
+        <h2 className="movies-card__title">{nameRU}</h2>
+        <p className="movies-card__duration">{`${duration} ${declinationMinute}`}</p>
+      </div>
+      <a
+        className="movies-card__link-image"
+        href={trailerLink}
+        target="_blank"
+        rel="noreferrer">
+        <img
+          className="movies-card__image"
+          src={pathname === "/saved-movies"
+            ? image
+            : `https://api.nomoreparties.co${image.url}`}
+          alt="Картинка фильма" />
+      </a>
+      <button
+        className={pathname === "/saved-movies"
+          ? "movies-card__button"
+          : `movies-card__button ${isSaved
+            ? "movies-card_active"
+            : ""}`}
+        onClick={handleClickSaveButton}>
+
+        {pathname === "/saved-movies"
+          ? (<img className="movies-card__button-icon"
+            src={iconDeleteCard}
+            alt="Кнопка удаления карточки" />
+          )
+          : isSaved
+            ? (<img className="movies-card__button-icon"
+              src={iconSave}
+              alt="Кнопка сохранения карточки" />
+            )
+            : <img className="movies-card__button-icon"
+                   src={iconUnsave} alt="Кнопка сохранения карточки"/>}
       </button>
-        </div>
-    </section>
+    </li>
   );
 };
 

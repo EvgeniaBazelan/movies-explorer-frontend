@@ -2,7 +2,6 @@
   max-width: 1200px;
   font-family: Inter, Arial, sans-serif;
   position: relative;
-
 }
 
 .navigation__links {
@@ -33,6 +32,8 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .navigation__login-link {
@@ -49,6 +50,8 @@
   line-height: 16px;
   text-decoration: none;
   color: #FFFFFF;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .navigation__movies-link,
@@ -62,11 +65,15 @@
 
 .navigation__movies-link {
   font-weight: 500;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .navigation__save-films-link {
   margin-left: 20px;
   font-weight: normal;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .navigation__profile-link {
@@ -79,6 +86,16 @@
   line-height: 16px;
 
   color: #000000;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.navigation__login-link:hover,
+.navigation__register-link:hover,
+.navigation__movies-link:hover,
+.navigation__save-films-link:hover,
+.navigation__profile-link:hover {
+  opacity: 0.6;
 }
 
 .navigation__accaunt-image {
@@ -131,23 +148,6 @@
 .navigation__menu-btn > span::after {
   content: "";
   top: 7px;
-}
-
-#navigation__menu-toggle {
-  display: none;
-}
-
-#navigation__menu-toggle:checked ~ .navigation__menu-btn > span {
-  transform: rotate(45deg);
-
-}
-#navigation__menu-toggle:checked ~ .navigation__menu-btn > span::before {
-  top: 0;
-  transform: rotate(0);
-}
-#navigation__menu-toggle:checked ~ .navigation__menu-btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
 }
 
 .navigation_hidden-link {
@@ -225,7 +225,6 @@
 
   .navigation__links-item_direction_column {
     flex-direction: column;
-
   }
 
   .navigation__profile-link {

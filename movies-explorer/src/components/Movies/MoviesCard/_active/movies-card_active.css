@@ -1,5 +1,5 @@
 .movies-card_active {
-
+  background: var(--main-color-accent);
   transition: background 0.2s ease-out;
 }
 

@@ -107,7 +107,7 @@ npm run start app.js (local start)
 
 pm2 start app.js (global start)
 pm2 logs
-
+pm2 restart app.js
 
 movies.backend.nomoredomains.rocks
 

@@ -58,7 +58,8 @@ const App = () => {
     }
   };
 
-  const handleRegister = ({ name, email, password },e) => {
+  // const handleRegister = ({ name, email, password },e) => {
+    const handleRegister = (e) => {
       e.preventDefault();
     auth
       .register(name, email, password)
@@ -86,7 +87,8 @@ const App = () => {
       });
   };
 
-  const handleLogin = ({ email, password },e) => {
+  // const handleLogin = ({ email, password },e) => {
+    const handleLogin = (e) => {
       e.preventDefault();
 
     auth

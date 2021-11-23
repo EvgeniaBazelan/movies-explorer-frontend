@@ -33,6 +33,14 @@ export const authorize = (email, password) => {
     body: JSON.stringify({ password, email })
   })
     .then(checkRes)
+      .then((res) => {
+        if (res){
+          //setCurrentUser(res.token)
+          //localStorage.setItem('token', res.token);
+
+          return res;
+        }
+      })
 };
 
 export const checkToken = (jwt) => {

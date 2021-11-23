@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     checkToken();
     // eslint-disable-next-line
-  }, [loggedIn]);
+  }, [loggedIn,localStorage.jwt]);
 
   const checkToken = () => {
     setIsLoading(true)
@@ -58,9 +58,9 @@ const App = () => {
     }
   };
 
-  // const handleRegister = ({ name, email, password },e) => {
-    const handleRegister = (e) => {
-      e.preventDefault();
+  const handleRegister = ({ name, email, password }) => {
+  //   const handleRegister = (e) => {
+  //     e.preventDefault();
     auth
       .register(name, email, password)
       .then((res) => {
@@ -87,9 +87,9 @@ const App = () => {
       });
   };
 
-  // const handleLogin = ({ email, password },e) => {
-    const handleLogin = (e) => {
-      e.preventDefault();
+  const handleLogin = ({ email, password }) => {
+  //   const handleLogin = (e) => {
+  //     e.preventDefault();
 
     auth
       .authorize(email, password)
@@ -150,7 +150,7 @@ const App = () => {
         })
         .catch((err) => console.log("Ошибка при получении данных, " + err));
     }
-  }, [loggedIn]);
+  }, [loggedIn, localStorage.jwt]);
 
   const handleSaveMovie = ({ movie }) => {
     setIsLoadingFilmSuccess(false)

@@ -35,13 +35,13 @@ const App = () => {
   useEffect(() => {
     checkToken();
     // eslint-disable-next-line
-  }, [currentUser]);
+  }, [loggedIn]);
 
   const checkToken = () => {
     setIsLoading(true)
     const jwt = localStorage.getItem("jwt");
 
-    if (jwt) {
+    if (jwt.length>0) {
       auth
         .checkToken(jwt)
         .then(() => {

@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     checkToken();
     // eslint-disable-next-line
-  }, []);
+  }, [currentUser]);
 
   const checkToken = () => {
     setIsLoading(true)

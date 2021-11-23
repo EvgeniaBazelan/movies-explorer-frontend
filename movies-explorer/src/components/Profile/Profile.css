@@ -84,7 +84,7 @@
 
 .proile__success-message {
   visibility: hidden;
-  color: var(--main-color-third);
+  color: #2be080;
   font-weight: normal;
   text-align: center;
   height: 15px;
@@ -105,7 +105,6 @@
   outline: none;
   background: none;
   cursor: pointer;
-  font-weight: normal;
   font-size: 13px;
   line-height: 16px;
 }

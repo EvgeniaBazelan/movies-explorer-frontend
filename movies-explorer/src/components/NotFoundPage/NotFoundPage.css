@@ -30,7 +30,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: var(--main-color-third);
+  color: #2be080;
 }
 
 @media all and (max-width: 1200px) {

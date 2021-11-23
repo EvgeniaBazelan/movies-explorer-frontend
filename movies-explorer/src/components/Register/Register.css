@@ -60,7 +60,7 @@
 
   border: 0;
   border-radius: 2px;
-  background-color: var(--main-color-third);
+  background-color: black;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -101,7 +101,7 @@
 
 .authorization__link {
   margin-left: 6px;
-  color: var(--main-color-third);
+  color: #2be080;
   text-decoration: none;
 }
 

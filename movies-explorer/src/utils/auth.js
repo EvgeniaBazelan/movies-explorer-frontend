@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://movies.backend.nomoredomains.rocks/api';
+export const BASE_URL = 'http://movies.backend.nomoredomains.rocks';
 
 const checkRes = (res) =>
   res.ok

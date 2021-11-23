@@ -1,5 +1,5 @@
 const mainApiConfig = {
-  baseUrl: "http://movies.backend.nomoredomains.rocks/api",
+  baseUrl: "http://movies.backend.nomoredomains.rocks",
   token: ""
 }
 

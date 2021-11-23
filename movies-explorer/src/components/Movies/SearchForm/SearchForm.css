@@ -188,10 +188,10 @@
     margin-bottom: 10px;
   }
 
-  .search-form__button {
-    top: 94px;
-    right: 32px;
-  }
+  /*.search-form__button {*/
+  /*  top: 94px;*/
+  /*  right: 32px;*/
+  /*}*/
 }
 
 @media all and (max-width: 440px) {

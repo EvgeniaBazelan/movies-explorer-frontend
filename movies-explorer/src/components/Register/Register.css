@@ -1,6 +1,6 @@
 .authorization {
   width: 100%;
-  font-family: var(--main-font-family);
+  font-family: Inter, Arial, sans-serif;
   box-sizing: border-box;
   padding: 60px 0 70px;
   min-width: 320px;
@@ -44,12 +44,12 @@
   font-size: 10px;
   line-height: 12px;
 
-  color: var(--main-color-text);
+  color: #A0A0A0;
 }
 
 .authorization__input {
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .authorization__button {
@@ -74,7 +74,7 @@
 }
 
 .authorization__button_disabled {
-  background-color: var(--main-color-text);
+  background-color: #A0A0A0;
 }
 
 .authorization__input-error {
@@ -82,7 +82,7 @@
   margin-bottom: 16px;
   font-size: 10px;
   line-height: 12px;
-  color: var(--main-color-accent);
+  color: red;
 }
 
 .authorization__input-error:last-of-type {
@@ -96,12 +96,12 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: var(--main-color-text);
+  color: #A0A0A0;
 }
 
 .authorization__link {
   margin-left: 6px;
-  color: #2be080;
+  color: #000000;
   text-decoration: none;
 }
 

@@ -48,7 +48,7 @@
   line-height: 28px;
 
   text-align: center;
-  color: var(--main-color-text);
+  color: #A0A0A0;
 }
 
 @media all and (max-width: 1200px) {

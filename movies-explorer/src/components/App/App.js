@@ -41,7 +41,7 @@ const App = () => {
     setIsLoading(true)
     const jwt = localStorage.getItem("jwt");
 
-    if (jwt.length>0) {
+    if (jwt) {
       auth
         .checkToken(jwt)
         .then(() => {
@@ -59,7 +59,7 @@ const App = () => {
   };
 
   const handleRegister = ({ name, email, password }) => {
-
+      e.preventDefault();
     auth
       .register(name, email, password)
       .then((res) => {
@@ -87,7 +87,7 @@ const App = () => {
   };
 
   const handleLogin = ({ email, password }) => {
-
+      e.preventDefault();
 
     auth
       .authorize(email, password)

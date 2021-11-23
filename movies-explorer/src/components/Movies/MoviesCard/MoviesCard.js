@@ -36,22 +36,21 @@ const MoviesCard = ({ movie,
   return (
 
     <li className="movies-card">
+        <a
+            className="movies-card__link-image"
+            href={trailerLink}
+            target="_blank"
+            rel="noreferrer">
+            <img
+                className="movies-card__image"
+                src={pathname === "/saved-movies"
+                    ? image
+                    : `https://api.nomoreparties.co${image.url}`}
+                alt="Картинка фильма" />
+        </a>
       <div className="movies-card__title-wrap">
         <h2 className="movies-card__title">{nameRU}</h2>
         <p className="movies-card__duration">{`${duration} ${declinationMinute}`}</p>
-      </div>
-      <a
-        className="movies-card__link-image"
-        href={trailerLink}
-        target="_blank"
-        rel="noreferrer">
-        <img
-          className="movies-card__image"
-          src={pathname === "/saved-movies"
-            ? image
-            : `https://api.nomoreparties.co${image.url}`}
-          alt="Картинка фильма" />
-      </a>
       <button
         className={pathname === "/saved-movies"
           ? "movies-card__button"
@@ -73,6 +72,7 @@ const MoviesCard = ({ movie,
             : <img className="movies-card__button-icon"
                    src={iconUnsave} alt="Кнопка сохранения карточки"/>}
       </button>
+    </div>
     </li>
   );
 };

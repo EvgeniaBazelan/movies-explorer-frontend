@@ -209,7 +209,7 @@ const App = () => {
   return (
     <CurrentUserContext.Provider value={currentUser}>
 
-      {isLoading
+      {!isLoading
         ? (
           <Preloader />
         )

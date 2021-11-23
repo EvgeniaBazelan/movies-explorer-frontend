@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     checkToken();
     // eslint-disable-next-line
-  }, [loggedIn,localStorage.jwt]);
+  }, [loggedIn]);
 
   const checkToken = () => {
     setIsLoading(true)
@@ -150,7 +150,7 @@ const App = () => {
         })
         .catch((err) => console.log("Ошибка при получении данных, " + err));
     }
-  }, [loggedIn, localStorage.jwt]);
+  }, [loggedIn]);
 
   const handleSaveMovie = ({ movie }) => {
     setIsLoadingFilmSuccess(false)

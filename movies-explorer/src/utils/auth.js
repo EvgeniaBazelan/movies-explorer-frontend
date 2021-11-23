@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.gusevgeorgiy.me.nomoredomains.club';
+export const BASE_URL = 'https://movies.backend.nomoredomains.rocks';
 
 const checkRes = (res) =>
   res.ok

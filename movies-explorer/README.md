@@ -78,3 +78,34 @@ sudo chown -R user:evgenia /data
 sudo systemctl enable mongod
 sudo systemctl start mongod
 sudo systemctl status mongod
+
+"frontend"
+cd movies-explorer-frontend
+cd movies-explorer
+npm run build
+
+cd /etc/nginx
+cd sites-available
+sudo nano default
+sudo nginx -t
+sudo systemctl start nginx
+sudo systemctl status nginx
+sudo systemctl restart nginx
+
+sudo cp -r /home/evgenia/movies-explorer-frontend/movies-explorer/build/* /movies-explorer
+
+
+
+movies.frontend.nomoredomains.rocks
+
+
+"backend"
+cd movies-explorer-api
+
+npm run start app.js (local start)
+
+pm2 start app.js (global start)
+pm2 logs
+
+
+movies.backend.nomoredomains.rocks

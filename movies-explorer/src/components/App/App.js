@@ -74,7 +74,7 @@ const App = () => {
             setLoggedIn(true);
             setCurrentUser(email, _id)
 
-            history.push("./movies");
+            history.push("/movies");
           })
           .catch((err) => {
             setIsInfoTooltip(true)

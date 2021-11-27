@@ -39,7 +39,7 @@ const Profile = ({ handleUpdateUserInfo,
     setShowMessage(false)
 
     if (values.name !== undefined) {
-      values.name === currentUser.name
+      values.name === currentUser.name || values.email === currentUser.email
         ? setIsDisableButton(true)
         : setIsDisableButton(false)
     }

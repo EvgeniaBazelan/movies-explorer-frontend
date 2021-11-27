@@ -28,7 +28,7 @@ const Profile = ({ handleUpdateUserInfo,
       handleUpdateUserInfo(values.name, currentUser.email)
     } else {
       handleUpdateUserInfo(values.name, values.email)
-      setName(values.name)
+      setName(values.name.value)
     }
     setShowMessage(true)
     setIsDisableButton(true)

@@ -31,7 +31,7 @@ const SearchForm = ({
           type="text"
           placeholder="Введите название фильма (без пробелов в начале и в конце ввода)"
           name="movieSearchInput"
-          onFocus={`${movieInputSearch}`}
+          // onFocus={`${movieInputSearch}`}
           // value={movieInputSearch}
           onChange={(e) => setMovieInputSearch(e.target.value)}
           required />

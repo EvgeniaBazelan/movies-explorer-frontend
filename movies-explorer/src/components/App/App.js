@@ -126,7 +126,7 @@ const App = () => {
     mainApi
       .updateUserInfo(name, email)
       .then((res) => {
-        setCurrentUser(res)
+        setCurrentUser({name:res.name, email: res.email})
         setIsEditSuccess(true)
       })
       .catch((err) =>

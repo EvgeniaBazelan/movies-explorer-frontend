@@ -39,9 +39,11 @@ const Profile = ({ handleUpdateUserInfo,
     setShowMessage(false)
 
     if (values.name !== undefined) {
-      values.name !== currentUser.name || values.email !== currentUser.email
-        ? setIsDisableButton(true)
-        : setIsDisableButton(false)
+      values.name === currentUser.name
+      ? setIsDisableButton(false)
+          :setIsDisableButton(true)
+        // ? setIsDisableButton(true)
+        // : setIsDisableButton(false)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);

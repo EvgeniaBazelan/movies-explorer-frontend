@@ -19,7 +19,6 @@ const Profile = ({ handleUpdateUserInfo,
   const currentUser = useContext(CurrentUserContext);
   const [showMessage, setShowMessage] = useState(false)
   const [isDisableButton, setIsDisableButton] = useState(true)
-  const [name,setName]=useState('')
   const handleSubmit = (e) => {
     e.preventDefault();
     if (values.name === undefined) {
@@ -28,15 +27,12 @@ const Profile = ({ handleUpdateUserInfo,
       handleUpdateUserInfo(values.name, currentUser.email)
     } else {
       handleUpdateUserInfo(values.name, values.email)
-      setName(values.name.value)
     }
     setShowMessage(true)
     setIsDisableButton(true)
   }
 
-  useEffect(() => {
-    setName(currentUser.name)
-  }, [currentUser]);
+  useEffect(() => {}, [currentUser]);
   useEffect(() => {
     onEditInfoUserMessage()
     setShowMessage(false)
@@ -54,7 +50,7 @@ const Profile = ({ handleUpdateUserInfo,
       <div className="profile__container">
         <form className="profile__form"
           onSubmit={handleSubmit}>
-          <h3 className="profile__title">{`Привет, ${name}!`}</h3>
+          <h3 className="profile__title">{`Привет, ${values.name || currentUser.name}!`}</h3>
           <ul className="profile__input-list">
             <li className="profile__input-wrapper">
               <div className="profile__input-field">

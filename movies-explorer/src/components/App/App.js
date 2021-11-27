@@ -118,7 +118,7 @@ const App = () => {
     mainApi.removeItemToken();
 
     setLoggedIn(false);
-    history.push("./");
+    history.push("/");
   };
 
   const handleUpdateUserInfo = (name, email) => {
@@ -126,7 +126,7 @@ const App = () => {
     mainApi
       .updateUserInfo(name, email)
       .then((res) => {
-        setCurrentUser(res)
+        setCurrentUser(res.name, res.email)
         setIsEditSuccess(true)
       })
       .catch((err) =>

@@ -31,7 +31,8 @@ const SearchForm = ({
           type="text"
           placeholder="Фильм"
           name="movieSearchInput"
-          value={movieInputSearch}
+          onFocus={movieInputSearch}
+          // value={movieInputSearch}
           onChange={(e) => setMovieInputSearch(e.target.value)}
           required />
           <button

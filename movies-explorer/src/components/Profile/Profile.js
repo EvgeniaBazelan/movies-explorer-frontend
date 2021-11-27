@@ -40,10 +40,8 @@ const Profile = ({ handleUpdateUserInfo,
 
     if (values.name !== undefined) {
       values.name === currentUser.name
-      ? setIsDisableButton(false)
-          :setIsDisableButton(true)
-        // ? setIsDisableButton(true)
-        // : setIsDisableButton(false)
+        ? setIsDisableButton(true)
+        : setIsDisableButton(false)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);

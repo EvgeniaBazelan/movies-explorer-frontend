@@ -29,7 +29,7 @@ const SearchForm = ({
         <input
           className="search-form__input"
           type="text"
-          placeholder="Фильм"
+          placeholder="Введите название фильма (без пробелов в начале и в конце ввода)"
           name="movieSearchInput"
           onFocus={movieInputSearch}
           // value={movieInputSearch}

@@ -101,7 +101,7 @@ const App = () => {
         }
 
         setLoggedIn(true);
-        history.push("./movies");
+        history.push("/movies");
       })
       .catch((err) => {
 
@@ -116,7 +116,7 @@ const App = () => {
     localStorage.removeItem("jwt");
     localStorage.removeItem("saveMovies");
     mainApi.removeItemToken();
-
+    setCurrentUser('');
     setLoggedIn(false);
     history.push("/");
   };

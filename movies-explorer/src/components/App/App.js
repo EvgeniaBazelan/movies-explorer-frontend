@@ -116,7 +116,7 @@ const App = () => {
     localStorage.removeItem("jwt");
     localStorage.removeItem("saveMovies");
     mainApi.removeItemToken();
-    setCurrentUser('');
+    setCurrentUser({ });
     setLoggedIn(false);
     history.push("/");
   };

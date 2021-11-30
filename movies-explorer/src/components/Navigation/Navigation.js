@@ -19,6 +19,9 @@ const Navigation = ({ isLogin }) => {
   const handleClickMenuBurger = () => {
       setClickMenuBurger(!clickMenuBurger)
   };
+    const handleClickLink = () => {
+        setClickMenuBurger(!clickMenuBurger)
+    };
 
   return (
     <nav className={`navigation ${navLinksHidden}`}>
@@ -86,7 +89,7 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__movies-link "
             to="/movies"
-            //onClick={handleClickMenuBurger}
+            onClick={handleClickLink}
           >
             Фильмы
           </Link>

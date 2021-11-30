@@ -86,13 +86,13 @@ const Navigation = ({ isLogin }) => {
           </Link>
         </li>
         <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
-          <Link
+          <a
             className="navigation__movies-link "
-            to="/movies"
+            href="/movies"
             onClick={handleClickMenuBurger}
           >
             Фильмы
-          </Link>
+          </a>
         </li>
           <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
           <Link

@@ -19,6 +19,9 @@ const Navigation = ({ isLogin }) => {
   const handleClickMenuBurger = () => {
       setClickMenuBurger(!clickMenuBurger)
   };
+    const handleClickLink = () => {
+        setClickMenuBurger(!clickMenuBurger)
+    };
 
   return (
     <nav className={`navigation ${navLinksHidden}`}>
@@ -77,7 +80,7 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__main-link"
             to="/"
-            onClick={handleClickMenuBurger}
+            onClick={handleClickLink}
           >
             Главная
           </Link>
@@ -86,14 +89,14 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__movies-link "
             to="/movies"
-            onClick={handleClickMenuBurger}
+            onClick={handleClickLink}
           >
             Фильмы
           </Link>
           <Link
             className="navigation__save-films-link"
             to="/saved-movies"
-            onClick={handleClickMenuBurger}
+            onClick={handleClickLink}
           >
             Сохранённые фильмы
           </Link>
@@ -102,7 +105,7 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__profile-link"
             to="/profile"
-            onClick={handleClickMenuBurger}
+            onClick={handleClickLink}
           >
             Аккаунт
             <img

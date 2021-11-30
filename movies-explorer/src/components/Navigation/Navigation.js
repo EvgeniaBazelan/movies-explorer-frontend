@@ -24,7 +24,7 @@ const Navigation = ({ isLogin }) => {
       setClickMenuBurger(!clickMenuBurger)
   };
   const handeleClickMovies = () => {
-      handleClickMenuBurger();
+      // handleClickMenuBurger();
       history.push("/movies");
   };
 

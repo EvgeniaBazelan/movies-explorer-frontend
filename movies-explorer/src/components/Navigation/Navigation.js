@@ -24,12 +24,12 @@ const Navigation = ({ isLogin }) => {
       setBurgerCheckBoxChecked(!burgerCheckBoxChecked)
       setClickMenuBurger(!clickMenuBurger)
   };
-  const handeleClickMovies = () => {
-       // handleClickMenuBurger();
-      history.push("/movies");
-      setBurgerCheckBoxChecked(!burgerCheckBoxChecked);
-      handleClickMenuBurger();
-  };
+  // const handeleClickMovies = () => {
+  //      // handleClickMenuBurger();
+  //     history.push("/movies");
+  //     setBurgerCheckBoxChecked(!burgerCheckBoxChecked);
+  //     handleClickMenuBurger();
+  // };
 
   return (
     <nav className={`navigation ${navLinksHidden}`}>
@@ -95,12 +95,13 @@ const Navigation = ({ isLogin }) => {
           </Link>
         </li>
         <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
-          <label
-            className="navigation__movies-link "
-            onClick={handeleClickMovies}
-          >
-            Фильмы
-          </label>
+            <Link
+                className="navigation__save-films-link"
+                to="/saved-movies"
+                onClick={handleClickMenuBurger}
+            >
+                Фильмы
+            </Link>
         </li>
           <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
           <Link

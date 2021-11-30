@@ -66,16 +66,17 @@ const App = () => {
           .then((res) => {
               const {email, _id} = res;
               return auth.authorize(email, password)
-          })
-          .then((data) => {
-              if (data) {
-                  localStorage.setItem("jwt", data.token);
-                  mainApi.setItemToken(data.token)
-              }
-              setLoggedIn(true);
-              setCurrentUser(email, _id)
 
-              history.push("/movies");
+                  .then((data) => {
+                      if (data) {
+                          localStorage.setItem("jwt", data.token);
+                          mainApi.setItemToken(data.token)
+                      }
+                      setLoggedIn(true);
+                      setCurrentUser(email, _id)
+
+                      history.push("/movies");
+                  })
           })
           .catch((err) => {
               setIsInfoTooltip(true)

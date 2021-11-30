@@ -64,7 +64,7 @@ const Navigation = ({ isLogin }) => {
 
       <div
         className={`navigation__sublayer 
-      ${!clickMenuBurger && "navigation_hidden"}`}
+      ${clickMenuBurger && "navigation_hidden"}`}
       ></div>
       <ul
         className={`navigation__links 

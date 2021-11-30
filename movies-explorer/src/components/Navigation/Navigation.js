@@ -69,7 +69,7 @@ const Navigation = ({ isLogin }) => {
       navigation__links_column
       navigation__links_visibility_off
      ${!isLogin && "navigation_hidden"}
-      ${clickMenuBurger && "navigation_opened"}`}
+      ${!clickMenuBurger && "navigation_opened"}`}
       >
         <li
           className="navigation__links-item

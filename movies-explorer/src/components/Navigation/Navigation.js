@@ -17,6 +17,7 @@ const Navigation = ({ isLogin }) => {
     }`;
 
 
+
   const handleClickMenuBurger = () => {
       setClickMenuBurger(!clickMenuBurger)
   };
@@ -92,6 +93,8 @@ const Navigation = ({ isLogin }) => {
           >
             Фильмы
           </Link>
+        </li>
+      <li>
           <Link
             className="navigation__save-films-link"
             to="/saved-movies"

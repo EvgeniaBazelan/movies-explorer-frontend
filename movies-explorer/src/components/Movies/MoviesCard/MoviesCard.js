@@ -15,7 +15,8 @@ const MoviesCard = ({ movie,
       duration,
       image,
       trailerLink,
-      isSaved
+      isSaved,
+        isOwn
     } = movie;
 
   const { pathname } = useLocation();
@@ -54,7 +55,7 @@ const MoviesCard = ({ movie,
       <button
         className={pathname === "/saved-movies"
           ? "movies-card__button"
-          : `movies-card__button ${isSaved
+          : `movies-card__button ${isSaved && isOwn
             ? "movies-card_active"
             : ""}`}
         onClick={handleClickSaveButton}>
@@ -64,7 +65,7 @@ const MoviesCard = ({ movie,
             src={iconDeleteCard}
             alt="Кнопка удаления карточки" />
           )
-          : isSaved
+          : isSaved&& isOwn
             ? (<img className="movies-card__button-icon"
               src={iconSave}
               alt="Кнопка сохранения карточки" />

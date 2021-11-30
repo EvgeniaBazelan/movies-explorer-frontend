@@ -20,7 +20,7 @@ const Navigation = ({ isLogin }) => {
       setClickMenuBurger(!clickMenuBurger)
   };
     const handleClickLink = () => {
-        setClickMenuBurger(!clickMenuBurger)
+        setClickMenuBurger(clickMenuBurger)
     };
 
   return (

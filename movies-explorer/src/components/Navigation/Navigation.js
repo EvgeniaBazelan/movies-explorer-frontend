@@ -17,9 +17,7 @@ const Navigation = ({ isLogin }) => {
     }`;
 
   const handleClickMenuBurger = () => {
-    clickMenuBurger
-      ? setClickMenuBurger(false)
-      : setClickMenuBurger(true);
+      setClickMenuBurger(!clickMenuBurger)
   };
 
   return (
@@ -79,7 +77,7 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__main-link"
             to="/"
-            onClick={handleClickMenuBurger}
+            //onClick={handleClickMenuBurger}
           >
             Главная
           </Link>
@@ -88,14 +86,14 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__movies-link "
             to="/movies"
-            onClick={handleClickMenuBurger}
+            //onClick={handleClickMenuBurger}
           >
             Фильмы
           </Link>
           <Link
             className="navigation__save-films-link"
             to="/saved-movies"
-            onClick={handleClickMenuBurger}
+            //onClick={handleClickMenuBurger}
           >
             Сохранённые фильмы
           </Link>
@@ -104,7 +102,7 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__profile-link"
             to="/profile"
-            onClick={handleClickMenuBurger}
+            //onClick={handleClickMenuBurger}
           >
             Аккаунт
             <img

@@ -6,12 +6,12 @@ import "./_opened/navigation_opened.css";
 import "./_active/navigation__menu-toggle_active.css"
 import accauntLogo from "../../images/icon-accaunt.svg";
 import { useState } from "react";
-const history = useHistory();
+
 
 const Navigation = ({ isLogin }) => {
   const [clickMenuBurger, setClickMenuBurger] = useState(false);
   const { pathname } = useLocation();
-
+    const history = useHistory();
   const navLinksHidden = `${pathname === "/sign-in"
     || pathname === "/sign-up"
     ? "navigation_hidden"

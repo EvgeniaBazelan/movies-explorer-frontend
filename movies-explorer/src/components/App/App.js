@@ -63,8 +63,8 @@ const App = () => {
         auth
             .register(name, email, password)
             .then((res) => {
-                const {email, _userId} = res;
-                userId = _userId;
+                const {email, _id} = res;
+                userId = _id;
                 return auth
                     .authorize(email, password)
             })

@@ -2,7 +2,6 @@
 function checkFilmLike(foundMovies, savedMovies) {
 
   return foundMovies.map((item) => {
-        const currentUser=React.useContext(CurrentUserContext);
     let isSaved;
     isSaved = savedMovies.some((i) => i.nameRU === item.nameRU)
     item.isSaved = isSaved;

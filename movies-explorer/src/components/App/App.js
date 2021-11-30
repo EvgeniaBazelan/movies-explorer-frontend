@@ -131,8 +131,9 @@ const App = () => {
 
   const handleLogOut = () => {
 
-    localStorage.removeItem("jwt");
-    localStorage.removeItem("saveMovies");
+    // localStorage.removeItem("jwt");
+    // localStorage.removeItem("saveMovies");
+      localStorage.clear();
     mainApi.removeItemToken();
     setCurrentUser({ });
     setLoggedIn(false);

@@ -18,7 +18,7 @@ const Navigation = ({ isLogin }) => {
     : ""
     }`;
 
-
+  const [burgerCheckBoxChecked, setBurgerCheckBoxChecked] = useState(false)
 
   const handleClickMenuBurger = () => {
       setClickMenuBurger(!clickMenuBurger)
@@ -26,6 +26,7 @@ const Navigation = ({ isLogin }) => {
   const handeleClickMovies = () => {
        // handleClickMenuBurger();
       history.push("/movies");
+      setBurgerCheckBoxChecked(!burgerCheckBoxChecked);
       handleClickMenuBurger();
   };
 
@@ -39,6 +40,7 @@ const Navigation = ({ isLogin }) => {
         <input
           className={`navigation__menu-toggle
          `}
+          checked={burgerCheckBoxChecked}
           id="navigation__menu-toggle"
           type="checkbox"
         />

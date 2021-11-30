@@ -61,23 +61,29 @@ const App = () => {
   const handleRegister = ({ name, email, password }) => {
   //   const handleRegister = (e) => {
   //     e.preventDefault();
+      let user
       auth
           .register(name, email, password)
           .then((res) => {
-              const {email, _id} = res;
-              return auth.authorize(email, password)
-
-                  .then((data) => {
+              // const {email, _id} = res;
+              user = res
+              // return auth.authorize(email, password)
+          })
+          .catch((err) => {
+              setIsInfoTooltip(true)
+              handleError(err)
+          });
+      auth.authorize(user)
+                .then((data) => {
                       if (data) {
                           localStorage.setItem("jwt", data.token);
                           mainApi.setItemToken(data.token)
                       }
                       setLoggedIn(true);
-                      setCurrentUser(email, _id)
+                      setCurrentUser(user.email, user._id)
 
                       history.push("/movies");
                   })
-          })
           .catch((err) => {
               setIsInfoTooltip(true)
               handleError(err)

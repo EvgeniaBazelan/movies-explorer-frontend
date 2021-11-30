@@ -183,9 +183,10 @@ const App = () => {
         }
       )
       .then((res) => {
-
+         console.log(res)
         setIsLoadingFilmSuccess(true)
-        setSavedMovies([res, ...savedMovies])
+          const savedMoviesOwn = res.filter((i) => i.owner === currentUser._id)
+        setSavedMovies([savedMoviesOwn, ...savedMovies])
       })
   }
 

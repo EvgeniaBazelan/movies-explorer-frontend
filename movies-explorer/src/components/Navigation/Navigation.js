@@ -88,7 +88,7 @@ const Navigation = ({ isLogin }) => {
         <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
           <a
             className="navigation__movies-link "
-            href="/movies"
+            href="https://movies.frontend.nomoredomains.rocks/movies"
             onClick={handleClickMenuBurger}
           >
             Фильмы

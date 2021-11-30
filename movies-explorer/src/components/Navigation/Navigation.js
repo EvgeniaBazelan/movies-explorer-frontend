@@ -18,8 +18,10 @@ const Navigation = ({ isLogin }) => {
 
   const handleClickMenuBurger = () => {
     clickMenuBurger
-      ? setClickMenuBurger(false)
-      : setClickMenuBurger(true);
+        ? setClickMenuBurger(true)
+        :setClickMenuBurger(false);
+      // ? setClickMenuBurger(false)
+      // : setClickMenuBurger(true);
   };
 
   return (
@@ -72,8 +74,8 @@ const Navigation = ({ isLogin }) => {
       ${clickMenuBurger && "navigation_opened"}`}
       >
         <li
-          className="navigation__links-item 
-        navigation_hidden-link 
+          className="navigation__links-item
+        navigation_hidden-link
         navigation__links-item_margin_null"
         >
           <Link

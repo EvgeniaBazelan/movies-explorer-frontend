@@ -21,7 +21,6 @@ export function register(name, email, password) {
 };
 
 export const authorize = (email, password) => {
-
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     credentials: 'include',
@@ -29,18 +28,16 @@ export const authorize = (email, password) => {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-
     body: JSON.stringify({ password, email })
-  })
-    .then(checkRes)
-      .then((res) => {
-        if (res){
-          //setCurrentUser(res.token)
-          //localStorage.setItem('token', res.token);
-
-          return res;
-        }
-      })
+  }).then(checkRes)
+      // .then((res) => {
+      //   if (res){
+      //     //setCurrentUser(res.token)
+      //     //localStorage.setItem('token', res.token);
+      //
+      //     return res;
+      //   }
+      // })
 };
 
 export const checkToken = (jwt) => {

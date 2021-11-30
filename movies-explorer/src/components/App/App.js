@@ -61,30 +61,26 @@ const App = () => {
   const handleRegister = ({ name, email, password }) => {
   //   const handleRegister = (e) => {
   //     e.preventDefault();
-    auth
-      .register(name, email, password)
-      .then((res) => {
-        const { email, _id } = res;
-        auth.authorize(email, password)
+      auth
+          .register(name, email, password)
+          .then((res) => {
+              const {email, _id} = res;
+              return auth.authorize(email, password)
+          })
           .then((data) => {
-            if (data) {
-              localStorage.setItem("jwt", data.token);
-              mainApi.setItemToken(data.token)
-            }
-            setLoggedIn(true);
-            setCurrentUser(email, _id)
+              if (data) {
+                  localStorage.setItem("jwt", data.token);
+                  mainApi.setItemToken(data.token)
+              }
+              setLoggedIn(true);
+              setCurrentUser(email, _id)
 
-            history.push("/movies");
+              history.push("/movies");
           })
           .catch((err) => {
-            setIsInfoTooltip(true)
-            handleError(err)
-          })
-      })
-      .catch((err) => {
-        setIsInfoTooltip(true)
-        handleError(err)
-      });
+              setIsInfoTooltip(true)
+              handleError(err)
+          });
   };
 
   const handleLogin = ({ email, password }) => {
@@ -146,7 +142,6 @@ const App = () => {
         .then(([userInfo, moviesInfo]) => {
           setCurrentUser(userInfo);
           setSavedMovies(moviesInfo);
-
         })
         .catch((err) => console.log("Ошибка при получении данных, " + err));
     }

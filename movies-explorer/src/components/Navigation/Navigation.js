@@ -16,12 +16,6 @@ const Navigation = ({ isLogin }) => {
     : ""
     }`;
 
-    const authLinksHidden = `${pathname === "/movies" ||
-    pathname === "/saved-movies" ||
-    pathname === "/profile"
-        ? "navigation_hidden "
-        : ""
-    }`;
 
   const handleClickMenuBurger = () => {
       setClickMenuBurger(!clickMenuBurger)
@@ -50,11 +44,10 @@ const Navigation = ({ isLogin }) => {
         </label>
       </div>
 
-      {/*<ul*/}
-      {/*  className={`navigation__links*/}
-      {/*${isLogin && "navigation_hidden"}`}*/}
-      {/*>*/}
-        <ul className={`navigation__links ${authLinksHidden}`}>
+      <ul
+        className={`navigation__links
+      ${isLogin && "navigation_hidden"}`}
+      >
         <li className="navigation__links-item ">
           <Link className="navigation__register-link" to="/sign-up">
             Регистрация

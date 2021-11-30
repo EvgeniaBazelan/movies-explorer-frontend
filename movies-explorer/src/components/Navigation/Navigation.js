@@ -86,7 +86,7 @@ const Navigation = ({ isLogin }) => {
           <Link
             className="navigation__main-link"
             to="/"
-            onClick={handleClickLink}
+            onClick={handleClickMenuBurger}
           >
             Главная
           </Link>

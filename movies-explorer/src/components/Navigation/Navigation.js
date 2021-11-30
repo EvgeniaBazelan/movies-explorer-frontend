@@ -94,7 +94,7 @@ const Navigation = ({ isLogin }) => {
             Фильмы
           </Link>
         </li>
-      <li>
+          <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
           <Link
             className="navigation__save-films-link"
             to="/saved-movies"

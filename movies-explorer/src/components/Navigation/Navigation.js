@@ -21,6 +21,7 @@ const Navigation = ({ isLogin }) => {
   const [burgerCheckBoxChecked, setBurgerCheckBoxChecked] = useState(false)
 
   const handleClickMenuBurger = () => {
+      setBurgerCheckBoxChecked(!burgerCheckBoxChecked)
       setClickMenuBurger(!clickMenuBurger)
   };
   const handeleClickMovies = () => {

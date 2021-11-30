@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
+import { useHistory} from "react-router";
 import "./Navigation.css";
 import "./_hidden/navigation_hidden.css";
 import "./_opened/navigation_opened.css";
 import "./_active/navigation__menu-toggle_active.css"
 import accauntLogo from "../../images/icon-accaunt.svg";
 import { useState } from "react";
+const history = useHistory();
 
 const Navigation = ({ isLogin }) => {
   const [clickMenuBurger, setClickMenuBurger] = useState(false);

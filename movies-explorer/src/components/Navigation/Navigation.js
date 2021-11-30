@@ -21,7 +21,10 @@ const Navigation = ({ isLogin }) => {
   const handleClickMenuBurger = () => {
       setClickMenuBurger(!clickMenuBurger)
   };
-
+ const handeleClickMovies = () =>{
+    handleClickMenuBurger;
+    history.push("/movies")
+};
 
   return (
     <nav className={`navigation ${navLinksHidden}`}>
@@ -86,13 +89,12 @@ const Navigation = ({ isLogin }) => {
           </Link>
         </li>
         <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
-          <a
+          <label
             className="navigation__movies-link "
-            href="https://movies.frontend.nomoredomains.rocks/movies"
-            onClick={handleClickMenuBurger}
+            onClick={handeleClickMovies}
           >
             Фильмы
-          </a>
+          </label>
         </li>
           <li className="navigation__links-item navigation__links-item_direction_column navigation__links-item_margin_null">
           <Link

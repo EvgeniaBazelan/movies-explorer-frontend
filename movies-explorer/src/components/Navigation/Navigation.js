@@ -23,10 +23,10 @@ const Navigation = ({ isLogin }) => {
   const handleClickMenuBurger = () => {
       setClickMenuBurger(!clickMenuBurger)
   };
- const handeleClickMovies = () =>{
-    handleClickMenuBurger;
-    history.push("/movies")
-};
+  const handeleClickMovies = () => {
+      handleClickMenuBurger();
+      history.push("/movies");
+  };
 
   return (
     <nav className={`navigation ${navLinksHidden}`}>

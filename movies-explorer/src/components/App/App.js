@@ -184,10 +184,8 @@ const App = () => {
       )
       .then((res) => {
          console.log(res)
-          if (res.owner === currentUser._id) {
               setIsLoadingFilmSuccess(true)
               setSavedMovies([res, ...savedMovies])
-          }
       })
   }
 

@@ -79,7 +79,7 @@ const App = () => {
                                     console.log(decoded)
                                     if (userReg.email === decoded.email || userReg._id === decoded._id) {
                                         setLoggedIn(true);
-                                        setCurrentUser(email, _id)
+                                        setCurrentUser(decoded.email, decoded._id)
                                         history.push("/movies");
                                     }
                                 }

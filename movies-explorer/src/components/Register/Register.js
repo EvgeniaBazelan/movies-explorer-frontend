@@ -18,7 +18,8 @@ const Register = ({ handleRegister }) => {
     e.preventDefault();
     const { name, email, password } = registerData;
 
-    handleRegister({ name, email, password });
+    handleRegister(registerData)
+    // ({ name, email, password });
   };
 
   const handleChangeInput = (e) => {

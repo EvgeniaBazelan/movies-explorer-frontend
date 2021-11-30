@@ -72,7 +72,7 @@ const App = () => {
                 localStorage.setItem("jwt", data.token);
                 mainApi.setItemToken(data.token)
                 setLoggedIn(true);
-                setCurrentUser(email, userId)
+                setCurrentUser({email, userId, name})
                 history.push("/movies");
             })
             .catch((err) => {

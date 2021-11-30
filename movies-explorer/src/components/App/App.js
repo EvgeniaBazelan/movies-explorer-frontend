@@ -57,33 +57,62 @@ const App = () => {
       setIsLoading(false)
     }
   };
+    const [userReg, setUserReg] = useState({});
+    const handleRegister = ({ name, email, password }) => {
+        auth
+            .register(name, email, password)
+            .then((res) => {
+                setUserReg(res)
+            })
+            .catch((err) => {
+                            setIsInfoTooltip(true)
+                            handleError(err)
+                        });
+        auth
+            .authorize(userReg.email, userReg.password)
+            .then((data) => {
+                                if (data) {
+                                    localStorage.setItem("jwt", data.token);
+                                    mainApi.setItemToken(data.token)
+                                    const tokenDecodablePart = data.token.split('.')[1];
+                                    const decoded = Buffer.from(tokenDecodablePart, 'base64').toString();
+                                    console.log(decoded)
+                                    if (userReg.email === decoded.email || userReg._id === decoded._id) {
+                                        setLoggedIn(true);
+                                        setCurrentUser(email, _id)
+                                        history.push("/movies");
+                                    }
+                                }
+                            })
+            .catch((err) => {
+                            setIsInfoTooltip(true)
+                            handleError(err)
+                        });
+    };
 
-  const handleRegister = ({ name, email, password }) => {
-  //   const handleRegister = (e) => {
-  //     e.preventDefault();
-      auth
-          .register(name, email, password)
-          .then((res) => {
-              const {email, _id} = res;
-
-              return auth.authorize(email, password)
-
-                  .then((data) => {
-                      if (data) {
-                          localStorage.setItem("jwt", data.token);
-                          mainApi.setItemToken(data.token)
-                      }
-                      setLoggedIn(true);
-                      setCurrentUser(email, _id)
-
-                      history.push("/movies");
-                  })
-          })
-          .catch((err) => {
-              setIsInfoTooltip(true)
-              handleError(err)
-          });
-  };
+  // const handleRegister = ({ name, email, password }) => {
+  // //   const handleRegister = (e) => {
+  // //     e.preventDefault();
+  //     auth
+  //         .register(name, email, password)
+  //         .then((res) => {
+  //             const {email, _id} = res;
+  //             return auth.authorize(email, password)
+  //         })
+  //           .then((data) => {
+  //                     if (data) {
+  //                         localStorage.setItem("jwt", data.token);
+  //                         mainApi.setItemToken(data.token)
+  //                     }
+  //                     setLoggedIn(true);
+  //                     setCurrentUser(email, _id)
+  //                     history.push("/movies");
+  //                 })
+  //         .catch((err) => {
+  //             setIsInfoTooltip(true)
+  //             handleError(err)
+  //         });
+  // };
 
   const handleLogin = ({ email, password }) => {
   //   const handleLogin = (e) => {

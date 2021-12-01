@@ -41,17 +41,15 @@ const App = () => {
 
   const checkToken = () => {
     setIsLoading(true)
-     const jwt = localStorage.getItem("jwt");
-      //const jwt = logToken
+    const jwt = localStorage.getItem("jwt");
     if (jwt) {
       auth
         .checkToken(jwt)
         .then(() => {
           mainApi.setItemToken(jwt);
-
           setLoggedIn(true);
-          setIsLoading(false)
-          // history.push(pathname);
+          setIsLoading(false);
+          history.push(pathname);
         })
         .catch(handleError);
     } else {

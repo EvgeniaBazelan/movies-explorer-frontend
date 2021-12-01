@@ -15,7 +15,7 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import * as auth from "../../utils/auth";
 import mainApi from "../../utils/MainApi";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import {LogTokenContext} from "../contexts/LogTokenContext";
+import {LogTokenContext} from "../../contexts/LogTokenContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"
 import PopupInfoTooltip from "../PopupInfoTooltip/PopupInfoTooltip";
 import Preloader from "../Movies/Preloader/Preloader";

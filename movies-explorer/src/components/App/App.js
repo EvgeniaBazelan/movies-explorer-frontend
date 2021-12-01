@@ -115,7 +115,8 @@ const App = () => {
     // localStorage.removeItem("jwt");
     // localStorage.removeItem("saveMovies");
     //   localStorage.clear();
-    document.cookie = "";
+      document.cookie = "jwt=; Domain=movies.backend.nomoredomains.rocks; Path=/; Expires=Wed, 08 Dec 2020 12:38:06 GMT;"
+
     setLogToken('');
     mainApi.removeItemToken();
     setCurrentUser({ });

@@ -58,7 +58,7 @@ const Movies = ({
           .getBeatFilmMovies()
           .then((films) => {
             const filteredFilms = films.filter(film => {
-               return typeof film.year !== undefined && typeof film.country !== undefined
+               return typeof film.country !== undefined && film.country != null
             })
             console.log(filteredFilms)
             setIsLoadingMovies(false)

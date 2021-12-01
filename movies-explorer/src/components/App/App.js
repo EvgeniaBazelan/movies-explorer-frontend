@@ -49,7 +49,9 @@ const App = () => {
                 mainApi.setItemToken(jwt);
                 setLoggedIn(true);
                 setIsLoading(false);
-                history.push(pathname);
+                if (pathname !== "/sign-in" && pathname !== "/sign-up" ) {
+                    history.push(pathname);
+                }
             })
             .catch(err => {
                 setLoggedIn(false);

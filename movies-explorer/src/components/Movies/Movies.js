@@ -57,10 +57,13 @@ const Movies = ({
         moviesApi
           .getBeatFilmMovies()
           .then((films) => {
-            console.log(films)
+            const filteredFilms = films.filter(film => {
+              return typeof film.e === undefined && film.e !== ''
+            })
+            console.log(filteredFilms)
             setIsLoadingMovies(false)
             setIsLoadingFilmSuccess(true)
-            setMovies(films);
+            setMovies(filteredFilms);
 
           })
           .catch((err) => {

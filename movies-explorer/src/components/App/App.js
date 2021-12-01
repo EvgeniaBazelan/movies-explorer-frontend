@@ -15,7 +15,7 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import * as auth from "../../utils/auth";
 import mainApi from "../../utils/MainApi";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import {LogTokenContext} from "../../contexts/LogTokenContext";
+//import {LogTokenContext} from "../../contexts/LogTokenContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"
 import PopupInfoTooltip from "../PopupInfoTooltip/PopupInfoTooltip";
 import Preloader from "../Movies/Preloader/Preloader";
@@ -28,7 +28,7 @@ const App = () => {
   const [isEditSuccess, setIsEditSuccess] = useState(false);
   const [isLoadingFilmSuccess, setIsLoadingFilmSuccess] = useState(true);
   const [isInfoTooltip, setIsInfoTooltip] = useState(false)
-    const [logToken, setLogToken]=useState('')
+   // const [logToken, setLogToken]=useState('')
   const history = useHistory();
   const { pathname } = useLocation();
 
@@ -37,12 +37,12 @@ const App = () => {
   useEffect(() => {
     checkToken();
     // eslint-disable-next-line
-  }, [loggedIn, logToken]);
+  }, [loggedIn]);
 
   const checkToken = () => {
     setIsLoading(true)
-    // const jwt = localStorage.getItem("jwt");
-      const jwt = logToken
+     const jwt = localStorage.getItem("jwt");
+      //const jwt = logToken
     if (jwt) {
       auth
         .checkToken(jwt)
@@ -71,8 +71,8 @@ const App = () => {
                     .authorize(email, password)
             })
             .then((data) => {
-                // localStorage.setItem("jwt", data.token);
-                setLogToken(data.token);
+                localStorage.setItem("jwt", data.token);
+               // setLogToken(data.token);
                 mainApi.setItemToken(data.token);
                 setLoggedIn(true);
                 setCurrentUser({email, userId, name});
@@ -94,8 +94,8 @@ const App = () => {
       .then((data) => {
 
         if (data) {
-          // localStorage.setItem("jwt", data.token);
-            setLogToken(data.token);
+           localStorage.setItem("jwt", data.token);
+            //setLogToken(data.token);
           mainApi.setItemToken(data.token);
         }
 
@@ -114,10 +114,10 @@ const App = () => {
 
     // localStorage.removeItem("jwt");
     // localStorage.removeItem("saveMovies");
-    //   localStorage.clear();
+       localStorage.clear();
      // document.cookie = "jwt=; Domain=movies.backend.nomoredomains.rocks; Path=/; Expires=Wed, 08 Dec 2020 12:38:06 GMT;"
 
-    setLogToken('');
+   // setLogToken('');
     mainApi.removeItemToken();
     setCurrentUser({ });
     setLoggedIn(false);
@@ -152,7 +152,7 @@ const App = () => {
         })
         .catch((err) => console.log("Ошибка при получении данных, " + err));
     }
-  }, [loggedIn, logToken]);
+  }, [loggedIn]);
 
   const handleSaveMovie = ({ movie }) => {
     setIsLoadingFilmSuccess(false)
@@ -209,7 +209,7 @@ const App = () => {
   };
 
   return (
-      <LogTokenContext.Provider value={logToken}>
+   //   <LogTokenContext.Provider value={logToken}>
     <CurrentUserContext.Provider value={currentUser}>
 
       {isLoading
@@ -275,7 +275,7 @@ const App = () => {
         )}
 
     </CurrentUserContext.Provider>
-      </LogTokenContext.Provider>
+     // </LogTokenContext.Provider>
   );
 }
 

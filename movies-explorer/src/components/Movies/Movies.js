@@ -36,6 +36,21 @@ const Movies = ({
       ? setIsCheckboxShortFilm(false)
       : setIsCheckboxShortFilm(true);
   };
+  let parameters = [country,
+    director,
+    duration,
+    year,
+    description,
+    image,
+    id,
+    trailerLink,
+    nameRU,
+    nameEN,]
+ const foundParameters = (parameters)=> {
+   parameters.forEach(parameter => {
+     typeof film.parameter !== undefined && film.parameter !== null
+   })
+ }
 
   useEffect(() => {
     console.log(movies)
@@ -58,7 +73,8 @@ const Movies = ({
           .getBeatFilmMovies()
           .then((films) => {
             const filteredFilms = films.filter(film => {
-               return typeof film.e !== undefined && film.e !== null
+               return foundParameters
+              //typeof film.e !== undefined && film.e !== null
             })
             console.log(filteredFilms)
             setIsLoadingMovies(false)

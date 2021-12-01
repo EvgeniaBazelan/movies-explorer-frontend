@@ -49,7 +49,7 @@ const App = () => {
                 mainApi.setItemToken(jwt);
                 setLoggedIn(true);
                 setIsLoading(false);
-                //history.push(pathname);
+                history.push(pathname);
             })
             .catch(err => {
                 setLoggedIn(false);

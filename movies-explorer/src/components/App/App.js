@@ -52,7 +52,7 @@ const App = () => {
                 if (pathname !== "/sign-in" && pathname !== "/sign-up" ) {
                     history.push(pathname);
                 } else {
-                    history.push("/");
+                    history.push("/movies");
                 }
             })
             .catch(err => {

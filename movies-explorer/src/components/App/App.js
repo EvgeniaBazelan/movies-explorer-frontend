@@ -62,7 +62,7 @@ const App = () => {
       history.push("/");
     }
   };
-    checkToken();
+
     const [userReg, setUserReg] = useState({});
     const handleRegister = ({ name, email, password }) => {
         let userId;

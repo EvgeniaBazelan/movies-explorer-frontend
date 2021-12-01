@@ -15,6 +15,7 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import * as auth from "../../utils/auth";
 import mainApi from "../../utils/MainApi";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import {LogTokenContext} from "../contexts/LogTokenContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"
 import PopupInfoTooltip from "../PopupInfoTooltip/PopupInfoTooltip";
 import Preloader from "../Movies/Preloader/Preloader";
@@ -27,6 +28,7 @@ const App = () => {
   const [isEditSuccess, setIsEditSuccess] = useState(false);
   const [isLoadingFilmSuccess, setIsLoadingFilmSuccess] = useState(true);
   const [isInfoTooltip, setIsInfoTooltip] = useState(false)
+    const [logToken, setLogToken]=useState('')
   const history = useHistory();
   const { pathname } = useLocation();
 
@@ -39,8 +41,8 @@ const App = () => {
 
   const checkToken = () => {
     setIsLoading(true)
-    const jwt = localStorage.getItem("jwt");
-
+    // const jwt = localStorage.getItem("jwt");
+      const jwt = logToken
     if (jwt) {
       auth
         .checkToken(jwt)
@@ -69,10 +71,11 @@ const App = () => {
                     .authorize(email, password)
             })
             .then((data) => {
-                localStorage.setItem("jwt", data.token);
-                mainApi.setItemToken(data.token)
+                // localStorage.setItem("jwt", data.token);
+                setLogToken(data.token);
+                mainApi.setItemToken(data.token);
                 setLoggedIn(true);
-                setCurrentUser({email, userId, name})
+                setCurrentUser({email, userId, name});
                 history.push("/movies");
             })
             .catch((err) => {
@@ -81,29 +84,6 @@ const App = () => {
                         });
     };
 
-  // const handleRegister = ({ name, email, password }) => {
-  // //   const handleRegister = (e) => {
-  // //     e.preventDefault();
-  //     auth
-  //         .register(name, email, password)
-  //         .then((res) => {
-  //             const {email, _id} = res;
-  //             return auth.authorize(email, password)
-  //         })
-  //           .then((data) => {
-  //                     if (data) {
-  //                         localStorage.setItem("jwt", data.token);
-  //                         mainApi.setItemToken(data.token)
-  //                     }
-  //                     setLoggedIn(true);
-  //                     setCurrentUser(email, _id)
-  //                     history.push("/movies");
-  //                 })
-  //         .catch((err) => {
-  //             setIsInfoTooltip(true)
-  //             handleError(err)
-  //         });
-  // };
 
   const handleLogin = ({ email, password }) => {
   //   const handleLogin = (e) => {
@@ -114,8 +94,9 @@ const App = () => {
       .then((data) => {
 
         if (data) {
-          localStorage.setItem("jwt", data.token);
-          mainApi.setItemToken(data.token)
+          // localStorage.setItem("jwt", data.token);
+            setLogToken(data.token);
+          mainApi.setItemToken(data.token);
         }
 
         setLoggedIn(true);
@@ -133,7 +114,8 @@ const App = () => {
 
     // localStorage.removeItem("jwt");
     // localStorage.removeItem("saveMovies");
-      localStorage.clear();
+    //   localStorage.clear();
+      setLogToken('');
     mainApi.removeItemToken();
     setCurrentUser({ });
     setLoggedIn(false);
@@ -225,6 +207,7 @@ const App = () => {
   };
 
   return (
+      <LogTokenContext.Provider value={logToken}>
     <CurrentUserContext.Provider value={currentUser}>
 
       {isLoading
@@ -290,6 +273,7 @@ const App = () => {
         )}
 
     </CurrentUserContext.Provider>
+      </LogTokenContext.Provider>
   );
 }
 

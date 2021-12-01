@@ -43,18 +43,23 @@ const App = () => {
     setIsLoading(true)
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
-      auth
-        .checkToken(jwt)
-        .then(() => {
-          mainApi.setItemToken(jwt);
-          setLoggedIn(true);
-          setIsLoading(false);
-          history.push(pathname);
-        })
-        .catch(handleError);
+        auth
+            .checkToken(jwt)
+            .then(() => {
+                mainApi.setItemToken(jwt);
+                setLoggedIn(true);
+                setIsLoading(false);
+                //history.push(pathname);
+            })
+            .catch(err => {
+                setLoggedIn(false);
+                setIsLoading(false)
+                history.push("/");
+            });
     } else {
       setLoggedIn(false);
-      setIsLoading(false)
+      setIsLoading(false);
+      history.push("/");
     }
   };
     checkToken();
@@ -259,9 +264,9 @@ const App = () => {
               <Route path='*'>
                 <NotFoundPage />
               </Route>
-              <Route>
-                {loggedIn ? <Redirect to="/movies" /> : <Redirect to="/" />}
-              </Route>
+              {/*<Route>*/}
+              {/*{loggedIn ? <Redirect to="/movies" /> : <Redirect to="/" />}*/}
+              {/*</Route>*/}
 
             </Switch>
             <PopupInfoTooltip

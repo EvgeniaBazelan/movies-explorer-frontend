@@ -26,7 +26,7 @@ class MainApi {
 
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
-      credentials: 'include',
+     // credentials: 'include',
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${this._token}`
@@ -38,7 +38,7 @@ class MainApi {
 
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      credentials: 'include',
+     // credentials: 'include',
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${this._token}`,
@@ -52,7 +52,7 @@ class MainApi {
 
   getMovies() {
     return fetch(`${this._baseUrl}/movies`, {
-      credentials: 'include',
+     // credentials: 'include',
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${this._token}`,
@@ -83,7 +83,7 @@ class MainApi {
 
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
-      credentials: 'include',
+      //credentials: 'include',
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${this._token}`,
@@ -108,7 +108,7 @@ class MainApi {
 
     return fetch(`${this._baseUrl}/movies/${movieId._id}`, {
       method: "DELETE",
-      credentials: 'include',
+     // credentials: 'include',
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${this._token}`,

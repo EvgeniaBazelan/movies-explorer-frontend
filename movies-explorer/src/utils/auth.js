@@ -9,7 +9,7 @@ export function register(name, email, password) {
 
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
-    credentials: 'include',
+   // credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export function register(name, email, password) {
 export const authorize = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
-    credentials: 'include',
+   // credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ export const authorize = (email, password) => {
 export const checkToken = (jwt) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
-    credentials: 'include',
+   // credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',

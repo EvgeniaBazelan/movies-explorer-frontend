@@ -58,12 +58,12 @@ const App = () => {
             .catch(err => {
                 setLoggedIn(false);
                 setIsLoading(false)
-                history.push("/");
+                history.push("/sign-in");
             });
     } else {
       setLoggedIn(false);
       setIsLoading(false);
-      history.push("/");
+      history.push("/sign-in");
     }
   };
 

@@ -73,7 +73,7 @@ const Movies = ({
           .getBeatFilmMovies()
           .then((films) => {
             const filteredFilms = films.filter(film => {
-               return foundParameters
+               return foundParameters(parameters)
               //typeof film.e !== undefined && film.e !== null
             })
             console.log(filteredFilms)

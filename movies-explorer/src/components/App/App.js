@@ -35,9 +35,9 @@ const App = () => {
   const handleError = () => (err) => console.error(err);
 
   useEffect(() => {
-    checkToken();
+      checkToken();
     // eslint-disable-next-line
-  });
+  }, [loggedIn]);
 
   const checkToken = () => {
     setIsLoading(true)
@@ -57,6 +57,7 @@ const App = () => {
       setIsLoading(false)
     }
   };
+    checkToken();
     const [userReg, setUserReg] = useState({});
     const handleRegister = ({ name, email, password }) => {
         let userId;

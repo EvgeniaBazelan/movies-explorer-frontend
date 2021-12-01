@@ -51,7 +51,7 @@ const App = () => {
 
           setLoggedIn(true);
           setIsLoading(false)
-          // history.push(pathname);
+           history.push(pathname);
         })
         .catch(handleError);
     } else {

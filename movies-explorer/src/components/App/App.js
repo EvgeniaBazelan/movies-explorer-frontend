@@ -63,7 +63,10 @@ const App = () => {
     } else {
       setLoggedIn(false);
       setIsLoading(false);
-      history.push("/sign-in");
+      if (pathname != "/")
+        history.push("/sign-in");
+      else
+        history.push("/");
     }
   };
 

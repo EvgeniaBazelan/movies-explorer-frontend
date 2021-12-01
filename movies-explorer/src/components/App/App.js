@@ -51,6 +51,8 @@ const App = () => {
                 setIsLoading(false);
                 if (pathname !== "/sign-in" && pathname !== "/sign-up" ) {
                     history.push(pathname);
+                } else {
+                    history.push("/");
                 }
             })
             .catch(err => {

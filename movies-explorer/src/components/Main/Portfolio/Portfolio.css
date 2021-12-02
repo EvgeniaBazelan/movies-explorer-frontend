@@ -53,11 +53,11 @@
 }
 
 .portfolio__link::after {
-  background-color: #000000; /* Цвет линии при наведении на нее курсора мыши */
+  background-color: #000000;
   display: block;
   content: "";
-  height: 2px; /* Высота линии */
-  width: 0%;
+  height: 2px;
+  width: 0;
   -webkit-transition: width 0.2s ease-in-out;
   -moz--transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;

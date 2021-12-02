@@ -38,7 +38,6 @@
 }
 
 .movies-card__button {
-  /*margin: 18px auto;*/
   width: 30px;
   height: 30px;
   border-radius: 30px;
@@ -69,5 +68,7 @@
   .movies-card__duration {
     font-size: 10px;
   }
-
 }
+
+
+

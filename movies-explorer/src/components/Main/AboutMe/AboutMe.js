@@ -1,11 +1,11 @@
 import './AboutMe.css';
-import selfies from '../../../images/foto-me3.jpg'
+import selfies from '../../../images/foto-me3.jpg';
 
 const AboutMe = () => {
   return (
     <section className="about-me">
+      <a id="about-me"></a>
       <div className="about-me__container">
-        <a id="about-me"></a>
         <h2 className="about-me__title">Студент</h2>
         <div className="about-me__presentation-wrap">
           <div className="about-me__presentation">

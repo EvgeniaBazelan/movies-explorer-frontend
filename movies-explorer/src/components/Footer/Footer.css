@@ -1,6 +1,7 @@
 .footer {
   display: none;
   width: 100%;
+  background: #fafafa;
 
   font-family: Inter, Arial, sans-serif;
   font-weight: 400;
@@ -10,7 +11,7 @@
 
 .footer__container {
   min-width: 320px;
-  max-width: 1280px;
+  max-width: 1140px;
   box-sizing: border-box;
   padding: 80px 0 20px;
   margin: 0 auto;
@@ -30,6 +31,8 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #e8e8e8;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 
 .footer__links {
@@ -88,6 +91,6 @@
   }
 
   .footer__copyright {
-    color: #A0A0A0;
+    color:#A0A0A0;
   }
 }

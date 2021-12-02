@@ -17,7 +17,7 @@
   padding-bottom: 23px;
   border-bottom: 1px solid black;
   text-align: left;
-  font-style: normal;
+
   font-weight: normal;
   font-size: 22px;
   line-height: 27px;
@@ -41,7 +41,6 @@
   line-height: 58px;
   letter-spacing: -0.04em;
   font-style: normal;
-  /* identical to box height, or 116% */
 }
 
 .techs__description {
@@ -76,14 +75,13 @@
   width: 90px;
   height: 60px;
   border-radius: 10px;
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
 
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: -0.04em;
   font-style: normal;
-
 }
 
 @media all and (max-width: 1200px) {

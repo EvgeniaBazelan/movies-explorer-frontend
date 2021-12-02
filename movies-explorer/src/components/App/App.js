@@ -140,7 +140,7 @@ const App = () => {
     mainApi
       .updateUserInfo(name, email)
       .then((res) => {
-        setCurrentUser(res)
+        setCurrentUser(res.data)
         setIsEditSuccess(true)
       })
       .catch((err) =>
